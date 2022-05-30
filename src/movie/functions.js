@@ -2,6 +2,19 @@ const Movie = require("./model"); //Taking Movie from model constraints
 
 
 
+exports.listMovie = async (movieObj) => {
+  try {
+    const response = await Movie.find(movieObj) 
+    console.log(response)
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+ 
+
+
+
 exports.addMovie = async (movieObj) => {
  try {
      const response = await Movie.create(movieObj) 
@@ -25,18 +38,15 @@ exports.deleteMovie = async(movieObj) => {
 exports.updateMovie = async (movieObj) => {
   try {
     const response = await Movie.findOneAndUpdate(movieObj) 
-
-
     
   } catch (error) {
       console.log(error);
   }
-
-
-
 }
 
  
+
+
 
 
 
