@@ -1,10 +1,10 @@
 require("./db/connection"); // This runs all lines in connection.js connecting us to Database.
 const yargs = require("yargs")// Lets us use Yargs
 const mongoose = require("mongoose");
-const { addMovie, listMovie } = require("./movie/functions");
+const { addMovie } = require("./movie/functions");
 const { deleteMovie } = require("./movie/functions");
 const { updateMovie } = require("./movie/functions");
-// const { listMovie } = require("./movie/functions");
+const { listMovie } = require("./movie/functions");
  
 
 
@@ -13,6 +13,8 @@ const app = async (yargsObj) => {
        
        await addMovie({title: yargsObj.title, actor: yargsObj.actor })
     } else if (yargsObj.listMovie){
+      await listMovie({})
+      console.log('Your movies are listed above');
       
           
 
