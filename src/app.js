@@ -11,7 +11,9 @@ const { listMovie } = require("./movie/functions");
 const app = async (yargsObj) => {
     if(yargsObj.addMovie){ // Terminal Call: node src/app.js --addMovie --title "Batman" --actor "Christian Bale"  //adds movie to database from yargs input
        
-       await addMovie({title: yargsObj.title, actor: yargsObj.actor })
+       await addMovie({title: yargsObj.title, 
+        actor: yargsObj.actor, 
+        year: yargsObj.year,})
     } else if (yargsObj.listMovie){
       await listMovie({})
       console.log('Your movies are listed above');
@@ -21,7 +23,9 @@ const app = async (yargsObj) => {
     } else if (yargsObj.updateMovie) { // Terminal Call: --updateMovie --title "Batman 2" --newTitle "new film title"
          await updateMovie({
          title: yargsObj.newTitle,
-         actor: yargsObj.newActor, 
+         actor: yargsObj.newActor,
+         year: yargsObj.newYear,  
+       
          })
          console.log("Your movie has been updated")
    

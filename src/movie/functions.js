@@ -4,7 +4,7 @@ const Movie = require("./model"); //Taking Movie from model constraints
 
 exports.listMovie = async (movieObj) => {
   try {
-    const response = await Movie.find({movieObj}) 
+    const response = await Movie.find({}) 
     console.log(response)
   } catch (error) {
       console.log(error);

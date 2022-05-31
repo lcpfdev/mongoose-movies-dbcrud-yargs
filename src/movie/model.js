@@ -10,7 +10,12 @@ const movieSchema = new mongoose.Schema({
     actor: {
     type: String,  
         default: "Not specified" // if they dont provide an actor it will = unspecified
-    }
+    },
+
+    year: { 
+        type: Number,
+            default: "Not specified"
+    },
 })  // Schema defines are constraints what we can and cant searched for
 
 const Movie = mongoose.model("Movie", movieSchema) // We will now be doing Movie.find / Movie.create
